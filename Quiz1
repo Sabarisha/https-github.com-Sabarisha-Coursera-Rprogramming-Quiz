@@ -1,0 +1,53 @@
+question 11 Ans:1 code_below
+df<-read.csv("quiz1_data.csv")
+colnames(df)
+
+
+#question 12 Ans:3 code_below
+head(df,2)
+
+##question 13 Ans:153 code_below
+nrow(df)
+
+
+##question 14 Ans:3 code_below
+tail(df,2)
+
+##question 15 Ans: 21
+df<-read.csv("quiz1_data.csv")          #importing dataframe
+e<-df[47,"Ozone"]                       #subsetting value at 47th row and ozone
+
+
+##question 16 Ans: 37 code_below How many NA values in Ozone column
+df<-read.csv("quiz1_data.csv")              
+ozdf<-df[,"Ozone"]                          
+missval<-is.na(ozdf)                        
+length(ozdf[missval])                       
+
+
+##question 17 Ans:42.1 Mean of ozone after removing NA values
+df<-read.csv("quiz1_data.csv")
+ozdf<-df[,"Ozone"]
+missval<-is.na(ozdf)
+mean(ozdf[!missval])
+
+##Question 18 Ans: 212.8
+f1<-subset(df,Ozone>31 & Temp>90)
+mean(f1$Solar.R)
+
+##question 19 Ans:79.1
+tempdf<-df[,"Temp"]
+misstemp<-is.na(tempdf)
+cleantempdf<-tempdf[!misstemp]
+mean(cleantempdf[df[,"Month"]==6])
+
+##question20 Ans: 115
+df<-read.csv("quiz1_data.csv")
+ozdf<-df[,"Ozone"]
+missval<-is.na(ozdf)
+cleanozdf<-ozdf[!missval]
+max(cleanozdf[df[,"Month"]==5])
+
+
+
+
