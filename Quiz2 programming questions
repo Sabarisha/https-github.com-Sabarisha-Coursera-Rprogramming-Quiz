@@ -15,6 +15,10 @@ pollutantmean<-function(directory,pollutant,id=1:332)
   #now converting list of data frames to one dataframe
   final_df<-do.call(rbind,list_data)
   
+  OR ALTERNATIVELY FOR MERGING DATAFRAMES INSIDE A LIST
+  library("plyr")
+  final_df<-ldply(list_data,rbind)
+  
   #finding the mean in final dataframe after removing na values
   ans<-mean(final_df[,pollutant],na.rm=TRUE)
   return(ans)
